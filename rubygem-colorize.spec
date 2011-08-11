@@ -8,7 +8,7 @@
 Summary: Add colors methods to string class
 Name: rubygem-%{gemname}
 Version: 0.5.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 Group: Development/Languages
 License: GPLv2+ or Ruby
 URL: http://github.com/fazibear/colorize
@@ -21,6 +21,7 @@ BuildRequires: ruby(rubygems)
 BuildRequires: ruby 
 BuildArch: noarch
 Provides: rubygem(%{gemname}) = %{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 %description
 Ruby string class extension. It add some methods to set color, background
@@ -63,5 +64,8 @@ cp -a .%{gemdir}/* \
 
 
 %changelog
+* Thu Aug 11 2011 Sergio Rubio <rubiojr@frameos.org> - 0.5.8-2
+- fix RHEL5 build
+
 * Thu Aug 11 2011 Sergio Rubio <rubiojr@frameos.org> - 0.5.8-1
 - Initial package
